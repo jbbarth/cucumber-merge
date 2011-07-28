@@ -56,7 +56,7 @@ function nagios_url_for($site) { return " &nbsp; | &nbsp; <a href=\"../cgi-bin/e
       function cucumber_status($item, $key, $status) { if ($key == "status") { $status[$item]++; } }
       $global_status = array("passed" => 0, "failed" => 0);
       foreach (scandir($json_dir) as $file) {
-        if (preg_match('!\.json!',$file)) {
+        if (preg_match('!\.json$!',$file)) {
           $site = preg_replace('!\.json$!', '', $file);
           //json parsing
           $raw = file_get_contents("$json_dir/$file");
