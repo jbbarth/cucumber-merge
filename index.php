@@ -34,8 +34,11 @@ function nagios_url_for($site) { return " &nbsp; | &nbsp; <a href=\"../cgi-bin/e
   <style>
   /* styles added manually ; cucumber.css should stay coherent with cucumber's default stylesheet */
   a, a:hover { color:#fff !important; }
-  .cucumber ul { font-size:12px; font-weight:bold; margin-top:40px; }
-  .cucumber li.site { padding:3px 10px; cursor:pointer; width:50em; margin:2px; color:white; }
+  .cucumber ul { font-size:12px; font-weight:bold; margin-top:40px;
+                 -moz-column-count:3; -moz-column-gap:5px;
+                 -webkit-column-count:3; -webkit-column-gap:5px;
+                 column-count:3; column-gap:5px; }
+  .cucumber li.site { padding:3px 10px; cursor:pointer; width:40em; margin:0 2px 2px 2px; color:white; }
   .cucumber li.passed, #cucumber-header.passed { background-color:#65C400; }
   .cucumber li.failed, #cucumber-header.failed { background-color:#c20000; }
   .cucumber li.site span.details { float:right; font-size:90%;color:#fff; font-weight:normal; }
