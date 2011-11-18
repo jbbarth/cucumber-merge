@@ -62,6 +62,8 @@ function nagios_url_for($site) { return " &nbsp; | &nbsp; <a href=\"../cgi-bin/e
           $raw = file_get_contents("$json_dir/$file");
           if ($locale != "" && $locale != "UTF-8") { $raw = iconv($locale, "UTF-8", $raw); }
           $json = json_decode($raw,true);
+          //next one if json is not an array
+          if (!is_array($json)) { continue; }
           //status for this site
           $statuses = array("passed" => 0, "failed" => 0);
           array_walk_recursive($json, 'cucumber_status', &$statuses);
